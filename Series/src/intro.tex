@@ -1,9 +1,38 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[russian]{babel}
-\usepackage[utf8]{inputenc}
 
-\date{04.09}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{setspace}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[breaklinks]{hyperref}
+
+\setlength{\textheight}{24cm}
+\setlength{\textwidth}{16cm}
+\setlength{\topmargin}{-5mm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setstretch{1.3}
+
+\sloppy
+
+\relpenalty=10000
+\binoppenalty=10000
+
+\theoremstyle{definition}
+\newtheorem{definition}{Опр.}[section]
+
+\renewcommand{\thedefinition}{\arabic{definition}}
+
+\date{}
 
 \begin{document}
-\LaTeX llll
+
+\begin{definition}
+Сумма членов бесконечной последовательности $\{U_n\}_{n=1}^{\infty}$ называется \textbf{рядом} и равна пределу его частичной суммы:
+    \begin{equation}
+        U_1 + U_2 + U_3 + \dots = \sum_{n=1}^{\infty} U_n = \lim_{n \to \infty} \sum_{k=1}^{n} U_k
+    \end{equation}
+При этом $U_n$ называется \textbf{общим членом последовательности}.
+\end{definition}
+
 \end{document}
