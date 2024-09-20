@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
 \usepackage[default]{droidserif}
 \usepackage[defaultsans]{droidsans}
@@ -15,12 +15,12 @@
 }
 \usepackage[breaklinks]{hyperref}
 
-\setlength{\textheight}{25cm}
-\setlength{\textwidth}{16cm}
-\setlength{\topmargin}{-5mm}
+\setlength{\textheight}{23cm}
+\setlength{\textwidth}{15.5cm}
+\setlength{\topmargin}{5mm}
 \setlength{\oddsidemargin}{0cm}
 \setlength{\evensidemargin}{1.5cm}
-\setstretch{1.3}
+\setstretch{1.5}
 
 \sloppy
 
@@ -29,9 +29,12 @@
 
 \newtheorem{theorem}{Теорема}[section]
 \newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{priz}{Признак}[theorem]
+\newtheorem{opr}{Опр.}
 \newtheorem{lemma}[theorem]{Лемма}
 \theoremstyle{remark}
 \newtheorem*{remark}{Замечание}
+\newtheorem*{ex}{Пример}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -56,3 +59,4 @@
 \newcommand{\normal}{\mathcal{N}}
 
 \renewcommand{\theequation}{\arabic{equation}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
