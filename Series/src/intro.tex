@@ -1,112 +1,112 @@
-\input{../../utils/preamble}
+\input{../../utils/preamble.tex}
 
+\date{4 сентября 2024}
 \begin{document}
-\begin{definition}
-Сумма членов бесконечной последовательности $\{U_n\}_{n=1}^{\infty}$ называется \textbf{рядом} и равна пределу его частичной суммы:
+\maketitle
+
+\begin{opr}
+    \textbf{Ряд}\\
+    Сумма членов бесонечной последовательности
+    \(\{a_{n}\}^{\infty}_{n=1}\) называется рядом
+    и равна пределу последовательности 
+    его частичной суммы:
     \begin{equation}
-        U_1 + U_2 + U_3 + \dots = \sum_{n=1}^{\infty} U_n = \lim_{n \to \infty} \sum_{k=1}^{n} U_k
+        a_{1} + a_{2} + a_{3} ... 
+        = \sum_{n=1}^{\infty} U_{n}
+        = \lim_{n\to\infty}\sum_{k=1}^{n} U_{k}
     \end{equation}
-При этом $U_n$ называется \textbf{общим членом последовательности}.
-\end{definition}
+    При этом \(a_{n}\) называется \textbf{общим членом ряда}
+\end{opr}
 
-\par
-\begin{definition}
-    Остаток ряда $r_n$ — сумма, остающаяся после отбрасывания частичной суммы ряда. 
-\end{definition}
+\begin{opr}
+    Остаток ряда \(r_{n}\) - сумма ряда, остающаяся
+    после отбрасывания частичной суммы ряда.
+\end{opr}
 
-\par
+\section{Исследование сходимости ряда}
+\begin{opr}
+    \begin{equation}
+        \begin{align*}
+            \text{существует и конечен } 
+            \lim_{n\to\infty}\sum_{k=1}^{n} U_{k} 
+            &\implies \text{ряд сходится} \\
+            \text{иначе} 
+            &\implies \text{ряд расходится}
+        \end{align*}
+    \end{equation}
+\end{opr}
 
-\textbf{Исследование сходимости ряда:}\\
-предел последовательности частичных сумм $\exists$ и конечен $\implies$ ряд сходится (далее — СХ), \\
-иначе ряд расходится (далее — РХ).
 
-\textbf{Знакоположительные ряды. Признаки сходимости}
 
+\subsection{Признаки сходимости для знакоположительных рядов}
 \begin{priz}
-    Признак сравнения с неравенством (мажорантный)\\
-    \begin{equation}
-        \begin{aligned}
-        &\text{Для рядов } \sum_{n = 1}^{\infty} a_n \text{ и } \sum_{n = 1}^{\infty} b_n: \forall n : a_n \leq b_n \implies \\
-        &\sum_{n = 1}^{\infty} b_n \text{ сходится,} \implies \sum_{n = 1}^{\infty} a_n \text{ тоже сходится;} \\
-        &\sum_{n = 1}^{\infty} a_n \text{ расходится,} \implies \sum_{n = 1}^{\infty} b_n \text{ тоже расходится.}
-        \end{aligned}
-    \end{equation}
+    Мажорантный признак\\
+    Для рядов \(\sum_{n=1}^{\infty} a_{n}\) 
+    и \(\sum_{n=1}^{\infty} b_{n} : 
+    \forall n: a_{n} \leq b_{n} \implies\) 
 
-    \begin{myproof}
-        \text{TODO}
-    \end{myproof} 
+    \begin{equation}
+        \begin{align*}
+            \sum_{n=1}^{\infty} a_{n} \text{  расходится} 
+            &\implies \sum_{n=1}^{\infty} b_{n} \text{  тоже расходится}\\
+            \sum_{n=1}^{\infty} b_{n} \text{  сходится} 
+            &\implies \sum_{n=1}^{\infty} a_{n} \text{  тоже сходится.}
+        \end{align*}
+    \end{equation}
+    \begin{proof}
+        TODO
+    \end{proof}
 \end{priz}
 
 \begin{priz}
-    Предельный (относительный) признак
+    Предельный признак \\
     \begin{equation}
-        \sum_{n = 1}^{\infty}a_n, \sum_{n = 1}^{\infty}b_n : \exists\lim_{n\to\infty}\frac{a_n}{b_n} = L. \text{Тогда ряды одновременно СХ или РХ}.\\ 
-    \end{equation} 
-    
-    \begin{myproof}
-        \text{TODO}
-    \end{myproof} 
+        \begin{align*}
+            \sum_{n=1}^{\infty} a_{n}, \sum_{n=1}^{\infty} b_{n}:
+            \exists\lim_{n\to\infty}\frac{a_{n}}{b_{n}} = L,\\
+            \text{Тогда ряды \textbf{одновременно} сходятся или расходятся}
+        \end{align*}
+    \end{equation}
+
+    \begin{proof}
+        TODO
+    \end{proof}
 \end{priz}
 
 
-\par
-\textbf{Свойства сходящихся рядов}
 
+\subsection{Свойства сходящихся рядов}
 \begin{sv}
-    $\sum U_n $ СХ $\implies r_n\to 0$ 
-\end{sv}
-
-
-\begin{sv}
-    Необходимое условие сходимости\\
-    $\sum{U_n}$ сходится $\implies$ $U_n \to 0$ при $n\to \infty$ . 
-
-    \begin{myproof}
+    \label{sv:neob}
+    Необходимое условие сходимости ряда
     \begin{equation}
-        \lim_{n\to\infty} U_n 
-        = \lim_{n\to\infty} (S_n - S_{n - 1})
-        = \lim_{n\to\infty}S_n - \lim_{n\to\infty} S_{n-1} 
-        = S - S 
-        = 0
+        \sum_{n=1}^{\infty} a_{n} \text{сходится}
+        \implies \lim_{n\to\infty} a_{n} = 0
     \end{equation}
-\end{myproof}
+    \begin{remark}
+        не работает в обратную сторону. 
+        Пример - гармонический ряд: \(\lim_{n\to\infty}a_{n} = 0\), 
+        но ряд расходится
+    \end{remark}
+\end{sv}
 
-NB: свойство не работает в обратную сторону. Пример - гармонический ряд: 
+\begin{sv}
+    Достаточное условие расходимости ряда 
     \begin{equation}
-        \begin{aligned}
-            &1 + \underbrace{\frac{1}{2}}_{\text{}} + \underbrace{\frac{1}{3} + \frac{1}{4}}_{\text{}} + \underbrace{\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8}}_{\text{}} + \cdots + \frac{1}{n} = S_n \\
-            &1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{4} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \cdots + \frac{1}{n} = S_n \\ \\
-            &S'_n \leq S_n \\\\
-            &S'_1 = 1 \\
-            &S'_2 = 1 + \frac{1}{2} \\
-            &S'_4 = 1 + 2 \cdot \frac{1}{2} \\
-            &S'_8 = 1 + 3 \cdot \frac{1}{2} \\
-            &S'_{16} = 1 + 4 \cdot \frac{1}{2} \\
-            &\dots \\
-            &S'_{2^k} = 1 + k \cdot \frac{1}{2} \xrightarrow{\text{при $k\to\infty$}} \infty 
-        \end{aligned} 
+        \lim_{n\to\infty} a_{n} \nrightarrow 0 
+        \implies \text{ ряд расходится}
     \end{equation}
-    Если сумма \( S^{'}_n \) меньшего ряда расходится, то сумма \( S_n \) также расходится. При этом общий член \( U_n \) стремится к нулю:
-    \[
-    U_n = \frac{1}{n} \to 0 \text{ при } n \to \infty.
-    \]
-
+    \begin{proof}
+        Предположим, что сходится. 
+        Тогда \(\lim_{n\to\infty} a_{n} = 0\) по \hyperlink{sv:neob}{св-ву 1.2.1}, противоречие
+    \end{proof}
 \end{sv}
-\par
-\begin{sv}
-    Достаточное условие расходимости\\
-    \(U_n\ \not\to 0\) при \(n\to\infty\) \(\implies\) РХ (предположим, что СХ. Тогда $U_n\to 0$ по св-ву 2.)
 
-\end{sv}
-\par
 \begin{sv}
-    Линейность\\
+    Линейность. \\
     - сходящиеся ряды можно почленно складывать, сходимость рез-та не изменится\\
-    - при умножении всех членов ряда на скаляр сходимость не меняется (а сумма ряда изменится в это число раз)\\
+    - при умножении всех членов ряда на число сходимость не меняется (а сумма ряда изменится в это число раз)\\
     - сходимость не меняется для частичной суммы/остатка ряда
 \end{sv}
-
-
-
 
 \end{document}
