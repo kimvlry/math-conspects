@@ -1,6 +1,7 @@
 \input{../../utils/preamble.tex}
 
-\date{4 сентября 2024}
+\date{4.09.24, 18.09.24}
+\title{Знакоположительные ряды. \\Свойства сходящихся рядов}
 \begin{document}
 \maketitle
 
@@ -40,7 +41,7 @@
 
 \subsection{Признаки сходимости для знакоположительных рядов}
 \begin{priz}
-    Мажорантный признак\\
+    \label{priz:maj} Мажорантный признак\\
     Для рядов \(\sum_{n=1}^{\infty} a_{n}\) 
     и \(\sum_{n=1}^{\infty} b_{n} : 
     \forall n: a_{n} \leq b_{n} \implies\) 
@@ -59,7 +60,7 @@
 \end{priz}
 
 \begin{priz}
-    Предельный признак \\
+    \label{priz:pred} Предельный признак \\
     \begin{equation}
         \begin{align*}
             \sum_{n=1}^{\infty} a_{n}, \sum_{n=1}^{\infty} b_{n}:
@@ -73,7 +74,18 @@
     \end{proof}
 \end{priz}
 
+\begin{priz}
+    \label{priz:dalamber} Признак Д'Аламбера \\
 
+\end{priz}
+
+\begin{priz}
+    \label{priz:radcauchy} Радикальный признак Коши \\
+\end{priz}
+
+\begin{priz}
+    \label{priz:intcauchy} Интегральный признак Коши \\
+\end{priz}
 
 \subsection{Свойства сходящихся рядов}
 \begin{sv}
@@ -116,7 +128,7 @@
                 &S^{'}_{2^{k}} = 1 + \frac{1}{2}\cdot 2^{k} \to\infty \text{ при } k\to\infty
             \end{align*}
         \end{equation}
-        Если сумма \(S^{'}_{n}\) меньшего ряда расходится, то сумма \(S_{n}\) также расходится. 
+        Если сумма \(S^{'}_{n}\) меньшего ряда расходится, то сумма \(S_{n}\) также расходится (по \hyperlink{priz:maj}{мажорантному признаку}). 
         При этом общий член стремится к нулю:
         \( \frac{1}{n}\to\infty \text{ при } n\to\infty \)
     \end{remark}
