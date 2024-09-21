@@ -83,10 +83,42 @@
         \sum_{n=1}^{\infty} a_{n} \text{сходится}
         \implies \lim_{n\to\infty} a_{n} = 0
     \end{equation}
+
     \begin{remark}
-        не работает в обратную сторону. 
-        Пример - гармонический ряд: \(\lim_{n\to\infty}a_{n} = 0\), 
-        но ряд расходится
+        свойство не работает в обратную сторону. \\
+        Пример - гармонический ряд (расходится): 
+        \begin{equation}
+            \begin{align*}
+                1 
+                + \underbrace{\frac{1}{2}}_{\text{}} 
+                + \underbrace{\frac{1}{3} + \frac{1}{4}}_{\text{}} 
+                + \underbrace{\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8}}_{\text{}}
+                + ... 
+                + \frac{1}{n}
+                = S_{n}
+                \\
+                1
+                + \frac{1}{2}
+                + \frac{1}{4} + \frac{1}{4}
+                + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8}
+                + ... 
+                + \frac{1}{n}
+                = S^{'}_{n}
+                \\
+                \\
+                &S^{'}_{n} \leq S_{n}\\
+                &S^{'}_{1} = 1\\
+                &S^{'}_{2} = 1 + \frac{1}{2}\\
+                &S^{'}_{4} = 1 + \frac{1}{2}\cdot 2\\
+                &S^{'}_{8} = 1 + \frac{1}{2}\cdot 3\\
+                &...
+                \\
+                &S^{'}_{2^{k}} = 1 + \frac{1}{2}\cdot 2^{k} \to\infty \text{ при } k\to\infty
+            \end{align*}
+        \end{equation}
+        Если сумма \(S^{'}_{n}\) меньшего ряда расходится, то сумма \(S_{n}\) также расходится. 
+        При этом общий член стремится к нулю:
+        \( \frac{1}{n}\to\infty \text{ при } n\to\infty \)
     \end{remark}
 \end{sv}
 
