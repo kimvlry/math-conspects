@@ -11,3 +11,4 @@ math-conspects
 3. [Предельные теоремы](https://github.com/kimvlry/math-conspects/blob/main/ProbabilityTheory/conspects/03.pdf) 
 
 ### Математическая статистика 
+soon
