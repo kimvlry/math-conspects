@@ -11,22 +11,49 @@
         все из своих возможных значений в зависимости от элементарных
         исходов испытания
         \\
+        СВ обозначаются заглавными буквами, 
+        а их значения - соответствующими маленькими буквами:
+        \begin{equation}
+            X, Y, X \dots . x, y, z
+        \end{equation}
         \\
         Случайные величины: 
         \begin{itemize}
-            \item дискретные (ДСВ) - возможные значения изолированы друг от друга 
+            \item \textbf{дискретные} (ДСВ) - возможные значения изолированы друг от друга 
                   (отдельные, конкретные значения, например - число, выпавшее при 
                   броске игральной кости)
-            \item непрерывные (НСВ) - целиком заполняют собой определенный участок 
+            \item \textbf{непрерывные} (НСВ) - целиком заполняют собой определенный участок 
                   числовой прямой
+                  \begin{opr} Строгое определение:
+                    СВ \(X\) называется непрерывной, если для нее существует 
+                    функция \(y = f(x)\) такая, что:
+                    \begin{equation}
+                        \forall x \in \R: \int_{-\infty}^{x} f(t)dt = F(x)
+                    \end{equation}
+
+                    \begin{ex}
+                        \begin{equation}
+                            f(x) = 0 \text{ при } x < 0, 
+                            a\sin x \text{ при } 0\leq x \leq \pi, 
+                            0 \text{ при } x > \pi
+                        \end{equation}
+                        \(a\) - ? \(F(x)\) - ? \(P(\frac{\pi}{3} < x < \frac{3\pi}{2})\) - ?
+                        \begin{equation}
+                            \begin{align*}
+                                &\int_{-\infty}^{+\infty} f(x)dx = 1 \implies\\
+                                &\int_{-\infty}^{0} 0dx + \int_{0}^{\pi} a\sin x dx + \int_{\pi}^{+\infty} 0 dx = \\
+                                &-a\cos x |^{\pi}_{0} = -a(-1) - (-a) = 2a = 1 \implies\\
+                                &a = \frac{1}{2}
+                            \end{align*}
+                        \end{equation}
+                    \end{ex}
+                  \end{opr}
         \end{itemize}
         \begin{ex}
             Ошибка при взвешивания вещества - это НСВ, кол-во ошибок - это ДСВ. 
         \end{ex}
     \end{opr}
 
-    \\
-    \\
     \begin{opr}
         \textbf{Закон распределения} - соотношение между
         всевозможными значениями СВ и их вероятностями
@@ -35,6 +62,88 @@
 
 
     \vspace{2cm}
-    \centering\large{24.09.24}
+    \begin{center}\large{24.09.24}\end{center}
+    \section{Закон распределения ДСВ}
+    \begin{ex}
+        В ящике 2 белых, 8 черных шаров. Одновременно достают 3.\\
+        X - число белых среди них. 
+    \end{ex}
+
+    \subsection{Ряд распределения}
+        \begin{equation}
+            \begin{align*}
+                &x_{0} = 0 ; &m_{1} = \\
+                &x_{1} = 1 ; &m_{2} = \\
+                &x_{2} = 2 ; &m_{3} = \\
+            \end{align*}
+
+            \begin{align*}
+                &x_{i} &0 &1 &2\\
+                &p_{i} &\frac{56}{120} &\frac{56}{120} &\frac{8}{120}
+            \end{align*}
+        \end{equation}
+
+    \subsection{Многоугольник распределения}
+
+    \subsection{Функция распределения}    
+        вероятность того, что \(X\) примет определенное значение относительно \(x\).
+        \begin{equation}
+            F(x) = P(X < x)
+        \end{equation}
+        \begin{ex}
+            \begin{equation}
+                F(-1) = P(X < -1)
+            \end{equation}
+        \end{ex}
+
+        \begin{sv}
+            Функция распределения везде определена: \(D(F) = (-\infty; +\infty)\)
+        \end{sv}
+        \begin{sv}
+            Область значений совпадает с областью значений вероятности: \(E(F) = [0; 1]\)
+        \end{sv}
+        \begin{sv}
+            \lim_{x\to -\infty} F(x) = 0\\
+            \lim_{x\to +\infty} F(x) = 1
+        \end{sv}
+        \begin{sv}
+            Функция распределения неубывающая
+        \end{sv}
+        \begin{sv}
+            Имеет разрывы I рода в точках \(x = x_{i}\) и величина разрыва равна \(p_{i}\) 
+            (разрывы отсчитываются от предыдущего уровня, а не от \(y = 0\))
+        \end{sv}
+        \begin{sv}
+            \(P(a \leq x < b) = F(b) - F(a)\)\\
+            \begin{proof}
+                \begin{equation}
+                    \begin{align*}
+                        &A. x < a\\
+                        &B. x < b\\
+                        &C. a \leq x < b\\
+                        &A + C = B, \text{а также } A, C \text{ несовместны}\\
+                        &P(A + C) = P(A) + P(C)\\
+                        \\
+                        &P(A) + P(C) = P(B) \implies P(C) = P(B) - P(A) = \\
+                        & P(x < b) - P(x < a) = F(b) - F(a)
+                    \end{align*}
+                \end{equation}
+            \end{proof}
+        \end{sv}
     
+
+        \section{Закон распределения НСВ}
+        \begin{equation}
+            P(x = x_{i}) = 0.
+        \end{equation}
+        \(A\) - невозможное \(\implies P(A) = 0\). 
+        \begin{remark}
+            не работает в обратную сторону! 
+        \end{remark}
+
+        \begin{sv}
+            \begin{equation}
+                F(X) = P(X < x)
+            \end{equation}
+        \end{sv}
 \end{document}
