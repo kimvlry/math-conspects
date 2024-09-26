@@ -62,7 +62,7 @@
 
 \subsection{Признаки сходимости для знакоположительных рядов}
 \begin{priz}
-    \label{priz:maj} Мажорантный признак\\
+    \label{priz:maj} \textbf{Мажорантный признак}\\
     Для рядов \(\sum_{n=1}^{\infty} a_{n}\) 
     и \(\sum_{n=1}^{\infty} b_{n} : 
     \forall n: a_{n} \leq b_{n} \implies\) 
@@ -94,8 +94,9 @@
     \end{proof}
 \end{priz}
 
+
 \begin{priz}
-    \label{priz:pred} Предельный признак \\
+    \label{priz:pred} \textbf{Предельный признак} \\
     Ряд  \(\sum_{n=1}^{\infty} a_{n}\)  исследуемый, 
     \(\sum_{n=1}^{\infty} b_{n}\)  - вспомогательный
     \begin{equation}
@@ -124,8 +125,9 @@
     \end{proof}
 \end{priz}
 
+
 \begin{priz}
-    \label{priz:dalamber} Признак Д'Аламбера \\
+    \label{priz:dalamber} \textbf{Признак Д'Аламбера} \\
     \begin{equation}
         \begin{align*}
             \lim_{n\to\infty}\frac{a_{n+1}}{a_{n}} = L\\
@@ -135,12 +137,34 @@
         \end{align*}
     \end{equation}
     \begin{proof}
-        \color{YellowOrange}\textbf{TODO}
+        \begin{equation}
+            \begin{align*}
+                &\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}} = L \\
+                &\Longleftrightarrow \forall \epsilon > 0 \hspace{0.5cm} \exists N(\epsilon) : 
+                n>N\implies |\frac{a_{n + 1}}{a_{n}} - L| < \epsilon\\
+                &\Longleftrightarrow L - \epsilon < \frac{a_{n + 1}}{a_{n}} < L + \epsilon\\
+                &\\
+                &\frac{a_{n+1}}{a_{n}} = q  < L + \epsilon\\
+            \end{align*}
+        \end{equation}
+        Докажем сходимость при \(L < 1\).\\
+        Подберем \(\epsilon\) так, чтобы \(L+\epsilon < 1\) и \(q < 1\):
+        \begin{equation}
+            \begin{align*}
+                &a_{2} = q a_{1}\\
+                &a_{3} = q^{2} a_{1}\\
+                &a_{4} = q^{3} a_{1}\\
+                & \dots \\
+                & \sum_{n=1}^{\infty} a_{n} = \sum_{n=1}^{\infty} q^{n} a_{1} = a_{1}\sum_{n=1}^{\infty}q^{n}.
+            \end{align*}
+        \end{equation}
+        Если \(q < 1\), то ряд сходится. Для \(q > 1\) аналогично
     \end{proof}
 \end{priz}
 
+
 \begin{priz}
-    \label{priz:radcauchy} Радикальный признак Коши \\
+    \label{priz:radcauchy} \textbf{Радикальный признак Коши} \\
     \begin{equation}
         \begin{align*}
             \lim_{n\to\infty}\sqrt[n]{U_{n}} = L \\
@@ -150,12 +174,24 @@
         \end{align*}
     \end{equation}
     \begin{proof}
-        \color{YellowOrange}\textbf{TODO}
+        \begin{equation}
+            \begin{align*}
+                &\lim_{n\to\infty}\sqrt[n]{U_{n}} = L\\
+                &\Longleftrightarrow\forall \epsilon > 0 
+                \hspace{0.5cm} \exists N(\epsilon): \forall n > N(\epsilon)
+                \implies |\sqrt[n]{U_{n}}| < \epsilon.\\
+                &L - \epsilon < \sqrt[n]{U_{n}} < L + \epsilon\\
+                &\sqrt[n]{U_{n}} = q < 1.
+            \end{align*}
+        \end{equation}
+        Пусть \(L > 1\). Выберем \(\epsilon: L - \epsilon > 1 \implies q > 1\)\\
+        \(U_{n} = q^{n} > 1 \implies\lim U_{n} \leq 0\), т.е. ряд расходится.
     \end{proof}
 \end{priz}
 
+
 \begin{priz}
-    \label{priz:intcauchy} Интегральный признак Коши \\
+    \label{priz:intcauchy} \textbf{Интегральный признак Коши} \\
     Дан ряд \(\sum_{n=1}^{\infty} U_{n}\), члены которого являются значениями 
     непрерывной, неотрицательной и монотонно \textbf{убывающей} 
     на \([1, +\infty]\) функции \(f(x)\) при целых \(x\):
@@ -170,6 +206,7 @@
         \color{YellowOrange}\textbf{TODO}
     \end{proof}
 \end{priz}
+
 
 \subsection{Свойства сходящихся рядов}
 \begin{sv}
