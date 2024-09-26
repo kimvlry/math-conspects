@@ -20,22 +20,43 @@
 \end{opr}
 
 \begin{opr}
-    Остаток ряда \(r_{n}\) - сумма ряда, остающаяся
+    \textbf{Частичная сумма ряда} - это сумма его первых \(n\) членов:
+    \begin{equation}
+        S_{n} = \sum_{k = 1}^{n} U_{k}
+    \end{equation}
+\end{opr}
+
+\begin{opr}
+    \textbf{Остаток ряда} \(r_{n}\) - сумма ряда, остающаяся
     после отбрасывания частичной суммы ряда.
 \end{opr}
 
+\begin{remark}
+    Ряд и его остаток сходятся или расходятся одновременно.
+    \begin{proof}
+        \color{YellowOrange}\textbf{TODO}
+        % \begin{equation}
+        %     \begin{align*}
+        %         &\sum_{n=1}^{\infty} U_{n} \text{ сходится } 
+        %         \Leftrightarrow \exists\lim_{n\to\infty}\sum_{k=1}^{\n}U_{k}\in\R\\
+        %         &
+        %     \end{align*}
+        % \end{equation}
+    \end{proof}
+\end{remark}
+
 \section{Исследование сходимости ряда}
-\begin{opr}
+\begin{theorem}
     \begin{equation}
         \begin{align*}
-            \text{существует и конечен } 
-            \lim_{n\to\infty}\sum_{k=1}^{n} U_{k} 
-            &\implies \text{ряд сходится} \\
+            \text{существует } 
+            \lim_{n\to\infty}\sum_{k=1}^{n} U_{k} = S\in\R
+            &\implies \text{ряд сходится ("к сумме \(S\)")} \\
             \text{иначе} 
             &\implies \text{ряд расходится}
         \end{align*}
     \end{equation}
-\end{opr}
+\end{theorem}
 
 
 
@@ -51,16 +72,32 @@
             \sum_{n=1}^{\infty} a_{n} \text{  расходится} 
             &\implies \sum_{n=1}^{\infty} b_{n} \text{  тоже расходится}\\
             \sum_{n=1}^{\infty} b_{n} \text{  сходится} 
-            &\implies \sum_{n=1}^{\infty} a_{n} \text{  тоже сходится.}
+            &\implies \sum_{n=1}^{\infty} a_{n} \text{  тоже сходится.}\\
         \end{align*}
     \end{equation}
+
+    \\
+
     \begin{proof}
-        TODO
+        Пусть \(a_{1} + a_{2} + \dots + a_{n} = S_{a}\) - частичная сумма первого ряда,\\
+        \(b_{1} + b_{2} + \dots + b_{3} = S_{b}\) - частичная сумма второго ряда.
+        Т.к. \(a_{n}\leq b_{n}\implies S_{a}\leq S_{b}\). \\
+        Пусть 2-й ряд сходится, тогда 
+        \begin{equation}
+            \(\exists\lim_{n\to\infty} S_{b} = L_{b}\),
+        \end{equation}
+        причем \(S_{b} < L_{b}\implies S_{a} \leq S_{b} < L_{b}\implies |S_{a}|\) ограничена сверху числом \(L_{b}\), \\
+        тогда \(\sum_{n=1}^{\infty} a_{n}\) сходится.\\
+        \newline
+        Пусть 1-й ряд расходится, тогда \(\lim S_{a} = \infty\).Т.к. \(S_{a} \leq S_{b}\), \(\lim_S_{b} = \infty\),\\
+        тогда \(\sum_{n=1}^{\infty} a_{b}\) расходится.\\
     \end{proof}
 \end{priz}
 
 \begin{priz}
     \label{priz:pred} Предельный признак \\
+    Ряд  \(\sum_{n=1}^{\infty} a_{n}\)  исследуемый, 
+    \(\sum_{n=1}^{\infty} b_{n}\)  - вспомогательный
     \begin{equation}
         \begin{align*}
             \sum_{n=1}^{\infty} a_{n}, \sum_{n=1}^{\infty} b_{n}:
@@ -70,7 +107,20 @@
     \end{equation}
 
     \begin{proof}
-        TODO
+        \begin{equation}
+            \begin{align*}
+                &\lim_{n\to\infty}\frac{a_{n}}{b_{n}} = L \\
+                &\Longleftrightarrow \forall \epsilon > 0 : \exists N(\epsilon): \forall n > N \implies |\frac{a_{n}}{b_{n}} - L| < \epsilon\\
+                &\Longleftrightarrow -\epsilon < \frac{a_{n}}{b_{n}} - L < \epsilon \implies L > 0 \implies L - \epsilon < \frac{a_{n}}{b_{n}} < L + \epsilon\\
+                &\Longleftrightarrow b_{n}(L - \epsilon) < a_{n} < b_{n}(L + \epsilon)\\
+                \\
+            \end{align*}
+        \end{equation}
+        Пусть сходится ряд \(b_{n}, \implies\) сходится \(\sum_{n=1}^{\infty}(L + \epsilon)b_{n} 
+        \implies \sum_{n=1}^{\infty}a_{n}\) сходится по мажорантному \hyperlink{priz:maj}{пр.}
+        Пусть расходится ряд \(b_{n} \implies\) расходится \(\sum_{n=1}^{\infty}(L - \epsilon)b_{n} 
+        \implies \sum_{n=1}^{\infty}a_{n}\) расходится по мажорантному \hyperlink{priz:maj}{пр.}   
+        \\    
     \end{proof}
 \end{priz}
 
@@ -85,7 +135,7 @@
         \end{align*}
     \end{equation}
     \begin{proof}
-        
+        \color{YellowOrange}\textbf{TODO}
     \end{proof}
 \end{priz}
 
@@ -100,7 +150,7 @@
         \end{align*}
     \end{equation}
     \begin{proof}
-        
+        \color{YellowOrange}\textbf{TODO}
     \end{proof}
 \end{priz}
 
@@ -117,7 +167,7 @@
     сходятся или расходятся \textbf{одновременно}
 
     \begin{proof}
-        
+        \color{YellowOrange}\textbf{TODO}
     \end{proof}
 \end{priz}
 
@@ -129,6 +179,10 @@
         \sum_{n=1}^{\infty} a_{n} \text{сходится}
         \implies \lim_{n\to\infty} a_{n} = 0
     \end{equation}
+
+    \begin{proof}
+        \color{YellowOrange}\textbf{TODO}
+    \end{proof}
 
     \begin{remark}
         свойство не работает в обратную сторону. \\
@@ -181,10 +235,45 @@
 \end{sv}
 
 \begin{sv}
-    Линейность. \\
-    - сходящиеся ряды можно почленно складывать, сходимость рез-та не изменится\\
-    - при умножении всех членов ряда на число сходимость не меняется (а сумма ряда изменится в это число раз)\\
-    - сходимость не меняется для частичной суммы/остатка ряда
+    Сходящиеся ряды можно почленно складывать, при этом сходимость не изменится,
+    а сумма полученного ряда будет равна сумме сумм исходных рядов.
+    \begin{proof}
+        \color{YellowOrange}\textbf{TODO}
+        % \begin{equation}
+        %     \begin{align*}
+        %         1. 
+        %         &\sum_{n=1}^{\infty} U_{n} = S_{n}^{1}; \hspace{1cm} \lim_{n\to\infty}S_{n} = S^{1} \\
+        %         2.
+        %         &\sum_{n=1}^{\infty} c\cdot U_{n} = S_{n}^{2} , \hspace{1cm} \lim_{n\to\infty}S_{n} = S^{2}
+        %     \end{align*}
+        % \end{equation}
+    \end{proof}
 \end{sv}
 
+\begin{sv}
+    При умножении сходящегося ряда на число, сходимость не изменятся, при этом
+    сумма изменится в это число раз.
+    \begin{proof}
+        \begin{equation}
+            \begin{align*}
+                1. 
+                &\sum_{n=1}^{\infty} U_{n} = S_{n}; \hspace{1cm} \lim_{n\to\infty}S_{n} = S \\
+                2.
+                &\sum_{n=1}^{\infty} c\cdot U_{n} = S_{n}^{'} ,
+            \end{align*}
+                
+            \begin{align*}
+                \text{тогда: }\hspace{0.5cm} 
+                 S_{n}^{'} = \sum_{n=1}^{\infty} c\cdot U_{n} = c \sum_{n=1}^{\infty} U_{n} = c\cdot S_{n}, 
+                \hspace{0.5cm} 
+                \lim_{n\to\infty} S_{n}^{'} = c\lim_{n\to\infty} S_{n} = c\cdot S
+            \end{align*}
+        \end{equation}
+    \end{proof}
+\end{sv}
+
+\begin{sv}
+    Сходимость ряда не изменится, если к нему прибавить или отбросить конечное 
+    число слагаемых.
+\end{sv}
 \end{document}
