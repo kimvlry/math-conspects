@@ -32,7 +32,7 @@
         Рассмотрим сумму \(S_{2k+1} = S_{2k} + U_{2k+1}\):
         \begin{equation}
             \begin{align*}
-                &\lim_{k\to\infty} S_{2k+1} = \lim_{k\to\infty} + \underbrace{\lim_{k\to\infty}U_{2k+1}}_{\text{=0 т.к. модули членов убывают}} = S+0= S\\
+                &\lim_{k\to\infty} S_{2k+1} = \lim_{k\to\infty} + \underbrace{\lim_{k\to\infty}U_{2k+1}}_{\text{= 0 т.к. ряд убывает}} = S+0= S\\
                 &\lim_{n\to\infty}S_{n} = S.
             \end{align*}
         \end{equation}
@@ -54,9 +54,20 @@
 \end{opr}
 
 \begin{thm}
-    Абсолютная сходимость знакопеременного ряда\\
+    Если ряд сходится абсолютно, то он сходится.\\
     \begin{proof}
-        
+        \(\sum_{n=1}^{\infty}U_{n}\) знакопеременный, сходится абсолютно.
+        \(\sum_{n=1}^{\infty}V_{n} = U_{n} + |U_{n}|\).
+        Очевидно, что \(V_{n} < 2|U_{n}|\). 
+        Так как сходится \(\sum_{n=1}^{\infty} |U_{n}|\), 
+        сходится и \(\sum_{n=1}^{\infty} 2|U_{n}|\).
+        Тогда: \(V_{n}\) сходится по мажорантному признаку,
+        \begin{equation}
+            \begin{align*}
+                &\sum_{n=1}^{\infty}V_{n} = \sum_{n=1}^{\infty}(U_{n} + |U_{n}|) = \sum_{n=1}^{\infty}U_{n} + \sum_{n=1}^{\infty}|U_{n}|\\
+                &\implies \sum_{n=1}^{\infty}U_{n} = \underbrace{\sum_{n=1}^{\infty}V_{n}}_{\text{сход.}} - \underbrace{\sum_{n=1}^{\infty}|U_{n}|}_{\text{сход.}} \implies \sum_{n=1}^{\infty}U_{n} \text{ сходится}
+            \end{align*}
+        \end{equation}
     \end{proof}
 \end{thm}
 
