@@ -35,13 +35,6 @@
     Ряд и его остаток сходятся или расходятся одновременно.
     \begin{proof}
         \color{YellowOrange}\textbf{TODO}
-        % \begin{equation}
-        %     \begin{align*}
-        %         &\sum_{n=1}^{\infty} U_{n} \text{ сходится } 
-        %         \Leftrightarrow \exists\lim_{n\to\infty}\sum_{k=1}^{\n}U_{k}\in\R\\
-        %         &
-        %     \end{align*}
-        % \end{equation}
     \end{proof}
 \end{remark}
 
@@ -86,10 +79,12 @@
         \begin{equation}
             \(\exists\lim_{n\to\infty} S_{b} = L_{b}\),
         \end{equation}
-        причем \(S_{b} < L_{b}\implies S_{a} \leq S_{b} < L_{b}\implies |S_{a}|\) ограничена сверху числом \(L_{b}\), \\
+        причем \(S_{b} < L_{b}\implies S_{a} \leq S_{b} < L_{b}\implies |S_{a}|\) 
+        ограничена сверху числом \(L_{b}\), \\
         тогда \(\sum_{n=1}^{\infty} a_{n}\) сходится.\\
         \newline
-        Пусть 1-й ряд расходится, тогда \(\lim S_{a} = \infty\).Т.к. \(S_{a} \leq S_{b}\), \(\lim_S_{b} = \infty\),\\
+        Пусть 1-й ряд расходится, тогда \(\lim S_{a} = \infty\).
+        Т.к. \(S_{a} \leq S_{b}\), \(\lim_S_{b} = \infty\),\\
         тогда \(\sum_{n=1}^{\infty} a_{b}\) расходится.\\
     \end{proof}
     \textbf{Эталонные ряды:}
@@ -114,8 +109,10 @@
         \begin{equation}
             \begin{align*}
                 &\lim_{n\to\infty}\frac{a_{n}}{b_{n}} = L \\
-                &\Longleftrightarrow \forall \epsilon > 0 : \exists N(\epsilon): \forall n > N \implies |\frac{a_{n}}{b_{n}} - L| < \epsilon\\
-                &\Longleftrightarrow -\epsilon < \frac{a_{n}}{b_{n}} - L < \epsilon \implies L > 0 \implies L - \epsilon < \frac{a_{n}}{b_{n}} < L + \epsilon\\
+                &\Longleftrightarrow \forall \epsilon > 0 : \exists N(\epsilon): 
+                \forall n > N \implies |\frac{a_{n}}{b_{n}} - L| < \epsilon\\
+                &\Longleftrightarrow -\epsilon < \frac{a_{n}}{b_{n}} - L < \epsilon 
+                \implies L > 0 \implies L - \epsilon < \frac{a_{n}}{b_{n}} < L + \epsilon\\
                 &\Longleftrightarrow b_{n}(L - \epsilon) < a_{n} < b_{n}(L + \epsilon)\\
                 \\
             \end{align*}
@@ -160,7 +157,8 @@
                 &a_{3} = q^{2} a_{1}\\
                 &a_{4} = q^{3} a_{1}\\
                 & \dots \\
-                & \sum_{n=1}^{\infty} a_{n} = \sum_{n=1}^{\infty} q^{n} a_{1} = a_{1}\sum_{n=1}^{\infty}q^{n}.
+                & \sum_{n=1}^{\infty} a_{n} = \sum_{n=1}^{\infty} q^{n} a_{1} 
+                = a_{1}\sum_{n=1}^{\infty}q^{n}.
             \end{align*}
         \end{equation}
         Если \(q < 1\), то ряд сходится. Для \(q > 1\) аналогично
@@ -258,7 +256,8 @@
                 &S^{'}_{2^{k}} = 1 + \frac{1}{2}\cdot 2^{k} \to\infty \text{ при } k\to\infty
             \end{align*}
         \end{equation}
-        Если сумма \(S^{'}_{n}\) меньшего ряда расходится, то сумма \(S_{n}\) также расходится (по \hyperlink{priz:maj}{мажорантному признаку}). 
+        Если сумма \(S^{'}_{n}\) меньшего ряда расходится, то сумма \(S_{n}\) 
+        также расходится (по \hyperlink{priz:maj}{мажорантному признаку}). 
         При этом общий член стремится к нулю:
         \( \frac{1}{n}\to\infty \text{ при } n\to\infty \)
     \end{remark}
@@ -281,14 +280,6 @@
     а сумма полученного ряда будет равна сумме сумм исходных рядов.
     \begin{proof}
         \color{YellowOrange}\textbf{TODO}
-        % \begin{equation}
-        %     \begin{align*}
-        %         1. 
-        %         &\sum_{n=1}^{\infty} U_{n} = S_{n}^{1}; \hspace{1cm} \lim_{n\to\infty}S_{n} = S^{1} \\
-        %         2.
-        %         &\sum_{n=1}^{\infty} c\cdot U_{n} = S_{n}^{2} , \hspace{1cm} \lim_{n\to\infty}S_{n} = S^{2}
-        %     \end{align*}
-        % \end{equation}
     \end{proof}
 \end{sv}
 
@@ -299,23 +290,26 @@
         \begin{equation}
             \begin{align*}
                 1. 
-                &\sum_{n=1}^{\infty} U_{n} = S_{n}; \hspace{1cm} \lim_{n\to\infty}S_{n} = S \\
+                &\sum_{n=1}^{\infty} U_{n} = S_{n}; \hspace{1cm} 
+                \lim_{n\to\infty}S_{n} = S \\
                 2.
                 &\sum_{n=1}^{\infty} c\cdot U_{n} = S_{n}^{'} ,
             \end{align*}
                 
             \begin{align*}
                 \text{тогда: }\hspace{0.5cm} 
-                 S_{n}^{'} = \sum_{n=1}^{\infty} c\cdot U_{n} = c \sum_{n=1}^{\infty} U_{n} = c\cdot S_{n}, 
+                 S_{n}^{'} = \sum_{n=1}^{\infty} c\cdot U_{n} 
+                 = c \sum_{n=1}^{\infty} U_{n} = c\cdot S_{n}, 
                 \hspace{0.5cm} 
-                \lim_{n\to\infty} S_{n}^{'} = c\lim_{n\to\infty} S_{n} = c\cdot S
+                \lim_{n\to\infty} S_{n}^{'} = c\lim_{n\to\infty} S_{n} 
+                = c\cdot S
             \end{align*}
         \end{equation}
     \end{proof}
 \end{sv}
 
 \begin{sv}
-    Сходимость ряда не изменится, если к нему прибавить или отбросить конечное 
-    число слагаемых.
+    Сходимость ряда не изменится, если к нему прибавить 
+    или отбросить конечное число слагаемых.
 \end{sv}
 \end{document}
