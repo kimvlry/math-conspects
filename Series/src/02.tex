@@ -11,6 +11,7 @@
     знак может изменяться по любому правилу.
 \end{remark}
 
+\section{Признак Лейбница}
 \begin{thm}
     Признак Лейбница (о сходимости знакочередующегося ряда)\\
     Дан знакочередующийся ряд \(\sum_{n=1}^{\infty} (-1)^{n-1} U_{n}\). 
@@ -40,7 +41,11 @@
     \end{proof}
 
     \begin{corollary}
-        
+        Остаток знакочередующегося ряда по модулю 
+        не превосходит первого отброшенного члена.
+        \begin{equation}
+            |r_{n}| \hspace{0.2cm} \leq \hspace{0.2cm} |(-1)^{n}U_{n+1}|
+        \end{equation}
     \end{corollary}
 \end{thm}
 
@@ -72,4 +77,20 @@
 \end{thm}
 
 \subsection{Свойства абсолютно сходящихся рядов}
+\begin{sv}
+    Сумма и сходимость ряда не меняются 
+    от перестановки членов ряда местами.
+\end{sv}
+
+\begin{sv}
+    \(|\sum_{n=1}^{\infty}U_{n}| \leq \sum_{n=1}^{\infty}|U_{n}|\)
+\end{sv}
+
+
+
+\vspace{2cm}
+\begin{center}\large{02.10.24}\end{center}
+
+
 \end{document}
+
