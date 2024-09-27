@@ -33,7 +33,9 @@
         Рассмотрим сумму \(S_{2k+1} = S_{2k} + U_{2k+1}\):
         \begin{equation}
             \begin{align*}
-                &\lim_{k\to\infty} S_{2k+1} = \lim_{k\to\infty} + \underbrace{\lim_{k\to\infty}U_{2k+1}}_{\text{= 0 т.к. ряд убывает}} = S+0= S\\
+                &\lim_{k\to\infty} S_{2k+1} = \lim_{k\to\infty} 
+                + \underbrace{\lim_{k\to\infty}U_{2k+1}}_{\text{= 0 т.к. ряд убывает}} 
+                = S+0= S\\
                 &\lim_{n\to\infty}S_{n} = S.
             \end{align*}
         \end{equation}
@@ -69,8 +71,12 @@
         Тогда: \(V_{n}\) сходится по мажорантному признаку,
         \begin{equation}
             \begin{align*}
-                &\sum_{n=1}^{\infty}V_{n} = \sum_{n=1}^{\infty}(U_{n} + |U_{n}|) = \sum_{n=1}^{\infty}U_{n} + \sum_{n=1}^{\infty}|U_{n}|\\
-                &\implies \sum_{n=1}^{\infty}U_{n} = \underbrace{\sum_{n=1}^{\infty}V_{n}}_{\text{сход.}} - \underbrace{\sum_{n=1}^{\infty}|U_{n}|}_{\text{сход.}} \implies \sum_{n=1}^{\infty}U_{n} \text{ сходится}
+                &\sum_{n=1}^{\infty}V_{n} = \sum_{n=1}^{\infty}(U_{n} + |U_{n}|) 
+                = \sum_{n=1}^{\infty}U_{n} + \sum_{n=1}^{\infty}|U_{n}|\\
+                &\implies \sum_{n=1}^{\infty}U_{n} 
+                = \underbrace{\sum_{n=1}^{\infty}V_{n}}_{\text{сход.}} 
+                - \underbrace{\sum_{n=1}^{\infty}|U_{n}|}_{\text{сход.}} 
+                \implies \sum_{n=1}^{\infty}U_{n} \text{ сходится}
             \end{align*}
         \end{equation}
     \end{proof}
