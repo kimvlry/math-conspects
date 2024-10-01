@@ -158,4 +158,239 @@
     \begin{center}\large{01.10.24}\end{center}
 
     \section{Числовые характеристики случайной величины}
+    \begin{opr}
+        \textbf{Математическое ожидание} (\(M(x); E(x); M\xi\))
+        - среднее по вероятности значение случайной величины. Для ДСВ:
+        \begin{equation}
+            M(x) = \frac{\sum x_{i}p_{i}}{\sum p_{i}} = \sum_{i = 1}^{n} x_{i} p_{i}
+        \end{equation}
+        Физический смысл:
+        бр бр бррр
+
+        Переход к формуле мат. ожидания для НСВ: \(x_{i}\to x; p_{i}\to f(x)dx; \sum_{i = 1}^{n} \to \int_{-\infty}^{+\infty}\)
+        \begin{equation}
+            &M(x) = \int_{-\infty}^{+\infty} x f(x)dx
+        \end{equation}
+        геом. смысл: соответсвует абсциссе центра тяжести графика фигуры, образованной графиком \(f(x)\)
+    \end{opr}
+
+    \begin{opr}
+        \textbf{Мода} \(m_{o}\) - наиболее возможное значение случайной величины 
+    \end{opr}
+
+    \begin{opr}
+        \textbf{Медиана} \(m_{e} \)- такое значение, что вероятность того, что 
+        \begin{equation}
+            \(P(x < m_{e}) = P(x > m_{e}) = \frac{1}{2}\)
+        \end{equation} 
+        геом. смысл: точка, которая делит площадь под графиком плотности пополам.
+
+        \begin{remark}
+            Если распределение дискретное и не симметричное, то за \(m_{e}\) принимают
+            такое значение СВ, что сумма вероятностей до него и после него минимально
+            отличаются друг от друга.
+        \end{remark}
+    \end{opr}
+
+    \begin{opr}
+        \textbf{Дисперсия} \(D(x)\) - степень отклонения значений СВ от мат. ожидания. 
+        Или: степень разброса значений СВ относительно мат. ожидания.
+        \begin{equation}
+            D(x) = M((x - M(x))^{2})
+        \end{equation}
+
+        Для ДСВ:
+        \begin{equation}
+            D(x) = \sum_{i = 1}^{n}(x_{i} - M(x))^{2}p_{i}
+        \end{equation}
+        \begin{equation}
+            \begin{align*}
+                &(x - M(x))^{2} = x^{2} - 2xM(x) + (M(x))^{2}\\
+                &M(x^{2} - 2xM(x) + (M(x))^{2}) = M(x^{2}) - 2M(x)M(x) + (M(x))^{2} = \\
+                &M(x^{2}) - 2(M(x))^{2} + (M(x))^{2} = \\
+                &M(x^{2}) - (M(x))^{2}
+            \end{align*}
+        \end{equation}
+
+        Для НСВ:
+        \begin{equation}
+            D(x) = \int_{-\infty}^{+\infty}(x_{i} - M(x))^{2}f(x)dx
+        \end{equation}
+    \end{opr}
+
+    \begin{ex}
+        \begin{equation}
+            \begin{align*}
+                &x_{i} = : 0; 1; 2\\
+                &p_{i} = : \frac{7}{15}; \frac{7}{15}; \frac{1}{15}
+            \end{align*}
+        \end{equation}
+        для ДСВ:
+        \begin{equation}
+            \begin{align*}
+                &M(x) = 0\cdot \frac{7}{15} + 1\cdot \frac{7}{15} + 2\cdot \frac{1}{15} = \frac{9}{15}\\
+                &m_{o} = 0 \wedge m_{o} = 1 \text{ (две моды)}\\
+                &m_{e} = 1\\
+                & \\
+                & \\
+                &D(x) = 0^{2}\cdot \frac{7}{15} + 1^{2}\cdot \frac{7}{15} + 2^{2}\cdot \frac{1}{15} - {\frac{9}{15}}^{2} \\
+                & = \frac{7}{15} + \frac{4}{15} - \frac{81}{225}\\
+                & = \frac{28}{75}
+            \end{align*}
+        \end{equation}
+        для НСВ:
+        \begin{equation}
+            f(x) = 
+            \begin{cases}
+                0, x < 0 \\
+                \frac{1}{2}\sin x; 0 \leq x \geq \pi \\
+                0, x > \pi
+            \end{cases}
+
+            \begin{align*}
+                &M(x) = \\
+                & = \frac{\pi}{2} \\
+                & \\
+                & P(x < m_{e}) = \frac{1}{2} \text{  ясно, что \(m_{e} \in [0; \pi]\)}\\
+                & P(x < m_{e}) = \int_{-\infty}^{m_{e}} f(x)dx = \int_{-\infty}^{0} 0dx + \int_{0}^{m_{e}} \frac{1}{2}\sin xdx = \frac{1}{2}\\
+                & \implies \int_{0}^{m_{e}} \frac{1}{2}\sin xdx = \frac{1}{2} \dots\\
+                & \dots = \frac{\pi}{2}\\
+                &\\
+                &\\
+                & D(x) = \int_{-\infty}^{+\infty} x^{2}f(x)dx - (M(x))^{2}\\
+                & = \int_{0}^{\pi} x^{2} \frac{1}{2}\sin xdx - {\frac{\pi}{2}}^{2}\\
+                & = \frac{1}{2} \int_{0}^{\pi} x^{2} \sin xdx - {\frac{\pi}{2}}^{2} \\
+                & = \dots = 
+            \end{align*}
+        \end{equation}
+    \end{ex}
+
+    \begin{opr}
+        \textbf{Среднеквадратическое отклонение} (СКО) \(\sigma(x)\)
+        \begin{equation}
+            \sigma(x) = \sqrt{D(x)}
+        \end{equation}
+        \begin{equation}
+            \begin{align*}
+                &[M(x)] = [m_{o}] = [m_{e}] = [x]\\
+                &[D(x)] = [x^{2}]\\
+                &[\sigma(x)] = [x]
+            \end{align*}
+        \end{equation}
+        имеет ту же размерность, что и мат. ожидание 
+    \end{opr}
+
+    \subsection{Основные свойства мат. ожидания\(M(x)\)}
+    \begin{sv}
+        \(M(C) = C\)
+    \end{sv}
+    \begin{sv}
+        \(M(x\cdot C) = C\cdot M(x)\)
+        \begin{proof}
+            
+        \end{proof}
+    \end{sv}
+    \begin{sv}
+        \(M(x +- y) = M(x) +- M(y)\)
+        \begin{proof}
+            
+        \end{proof}
+    \end{sv}
+    \begin{sv}
+        если \(x, y\) независимы: \(M(x\cdot y) = M(x)\cdot M(y)\)
+    \end{sv}
+
+
+    \subsection{Основные свойства дисперсии \(D(x)\)}
+    \begin{sv}
+        \(D(C) = 0\)
+    \end{sv}
+    \begin{sv}
+        \(D(s\cdot C) = C^{2} D(x)\)
+        \begin{proof}
+            \begin{equation}
+                \begin{align*}
+                    &D(x\cdot C) \\
+                    &= M((xC - M(xC)))^{2} \\
+                    &= M((xC - CM(x)))^{2} \\
+                    &= M(C^{2}(x - M(x))^{2}) \\
+                    &= C^{2}M((x - M(x)))^{2} \\
+                    &= C^{2}D(x)
+                \end{align*}
+            \end{equation}
+        \end{proof}
+    \end{sv}
+    \begin{sv}
+        если \(x, y\) независимы: \(D(x +- y) = D(x) +- D(y)\)
+    \end{sv}
+
+
+
+    \subsection{Понятие о начальных и центральных теоретических моментах}
+    \begin{opr}
+        \textbf{Начальный момент порядка k}
+        \begin{equation}
+            \nu_{k} = M(x^{k}) = 
+            \begin{cases}
+                \sum_{i = 1}^{n} x_{i}p_{i} \text{  для ДСВ}\\
+                \int_{-\infty}^{+\infty} x^{k} f(x)dx \text{  для НСВ}
+            \end{cases}
+        \end{equation}
+    \end{opr}
+
+    \begin{opr}
+        \textbf{Центральный момент порядка k}
+        \begin{equation}
+            \mu_{k} = M((x - M(x))^{k}) = 
+            \begin{cases}
+                \sum_{i = 1}^{n} (x_{i} - M(x))^{k} \text{  для ДСВ}\\
+                \int_{-\infty}^{+\infty} (x - M(x))^{k}f(x)dx \text{  для НСВ}
+            \end{cases}
+        \end{equation}
+    \end{opr}
+
+    \begin{ex}
+        \begin{equation}
+            \begin{align*}
+                &\mu_{2} = D(x) = \nu_{2} - (\nu_{1})^{2}\\
+                &D(x) = \sum_{i=1}^{n}x_{i}p_{i} - (M(x))^{2} = \nu_{2} - (\nu_{1})^{2}
+            \end{align*}
+        \end{equation}
+    \end{ex}
+
+
+    \begin{opr}
+        \textbf{Коэффициент асимментрии} - характеризует меру скошенности распределения
+        \begin{equation}
+            A = \frac{\mu_{3}}{\sigma^{3}}
+        \end{equation}
+    \end{opr}
+    \begin{opr}
+        \textbf{Коэффициент эксцесса} - степень "пологости". 
+        \(E_{k} > 0\) - "заостренное", \(E_{k} < 0\) - "пологое"
+        \begin{equation}
+            E_{k} = \frac{\mu_{4}}{\sigma^{4}} - 3
+        \end{equation}
+    \end{opr}
+
+
+
+    \section{Основные законы распределения случайных величин}
+    \subsection{Дискретные}
+    \begin{opr}
+        \textbf{Равномерное} - все вероятности одинаковы 
+        \begin{equation}
+            p_{i} = \frac{1}{n}
+        \end{equation}
+        при этом 
+        \begin{equation}
+            \begin{align*}
+                &M(x) = \frac{n + 1}{2}\\
+                &D(x) = \frac{n^{2}-1}{12}
+            \end{align*}
+        \end{equation}
+        \begin{ex}
+            бросание игральной кости
+        \end{ex}
+    \end{opr}
 \end{document}
