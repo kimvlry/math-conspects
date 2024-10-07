@@ -75,7 +75,7 @@
         Пусть \(H_{1}, H_{2}, \dots, H_{n}\) - полная группа событий. 
         \(A\) - вер-ть того, что произошло какое-то из них. Тогда
         \begin{equation}
-            P(A) = \sum_{1}^{\infty} P(H_{i}) P(A|H_{i})
+            P(A) = \sum_{1}^{n} P(H_{i}) P(A|H_{i})
         \end{equation}
     \end{thm}
 
@@ -85,12 +85,12 @@
         Пусть \(H_{1}, H_{2}, \dots, H_{n}\) - полная группа событий. 
         Известно, что \(A\) произошло. Тогда:
         \begin{equation}
-            P(H_{k} | A) = \frac{P(H_{k})\cdot P(A|H_{k})}{\sum_{1}^{\infty} P(H_{i}) P(A|H_{i})}
+            P(H_{k} | A) = \frac{P(H_{k})\cdot P(A|H_{k})}{\sum_{1}^{n} P(H_{i}) P(A|H_{i})}
         \end{equation}
         \begin{proof}
             \begin{equation}
                 P(H_{k} | A) = \frac{P(H_{k} A)}{P(A)} 
-                = \frac{P(H_{k})\cdot P(A|H_{k})}{\sum_{1}^{\infty} P(H_{i}) P(A|H_{i})}
+                = \frac{P(H_{k})\cdot P(A|H_{k})}{\sum_{1}^{n} P(H_{i}) P(A|H_{i})}
             \end{equation}
             (раскрыли усл. вер-ть по определению, в числ. применяем формулу произведения
             вероятностей, а в знаменателе — формулу полной вероятности)
