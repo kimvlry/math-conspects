@@ -38,12 +38,16 @@
     \end{proof}
 \end{remark}
 
+
+
 \section{Исследование сходимости ряда}
 \begin{theorem}
+    \(\lim_{n\to\infty}\sum S_{k} = S\in\R\) 
+    - предел последовательности частичных сумм ряда.
     \begin{equation}
         \begin{align*}
-            \text{существует } 
-            \lim_{n\to\infty}\sum_{k=1}^{n} U_{k} = S\in\R
+            \text{существует и сходится } 
+            \lim_{n\to\infty}\sum S_{k} = S\in\R
             &\implies \text{ряд сходится ("к сумме \(S\)")} \\
             \text{иначе} 
             &\implies \text{ряд расходится}
@@ -51,7 +55,16 @@
     \end{equation}
 \end{theorem}
 
-
+\begin{thm}
+    \textbf{Необходимое условие сходимости ряда}
+    \begin{equation}
+        \sum U_{n} \text{ сходится }\implies \lim_{n\to\infty} U_{n} = 0.
+    \end{equation}
+    Удобнее использовать признак расходимости: 
+    \begin{equation}
+        \lim_{n\to\infty}U_{n} != 0 \implies \text{ ряд расходится }
+    \end{equation}
+    \end{thm}
 
 \subsection{Признаки сходимости для знакоположительных рядов}
 \begin{priz}
