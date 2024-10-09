@@ -1,0 +1,43 @@
+name: Build and Deploy LaTeX PDFs
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up LaTeX
+      run: sudo tlmgr install xelatex texlive-lang-cyrillic
+
+    - name: Identify changed .tex files
+      id: changed_files
+      run: |
+        echo "::set-output name=files::$(git diff --name-only HEAD^ HEAD | grep '\.tex$')"
+
+    - name: Compile PDFs
+      run: |
+        for tex_file in ${{ steps.changed_files.outputs.files }}; do
+          if [[ $tex_file == ProbabilityTheory/* ]]; then
+            output_dir='../../output/ProbabilityTheory'
+          elif [[ $tex_file == Series/* ]]; then
+            output_dir='../../output/Series'
+          else
+            continue
+          fi
+
+          xelatex -interaction=nonstopmode -output-directory="$output_dir" "\input{../../utils/preamble.tex} \input{$tex_file}"
+        done
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./output 
+        keep_files: true  
