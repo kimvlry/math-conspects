@@ -3,41 +3,55 @@ name: Build and Deploy LaTeX PDFs
 on:
   push:
     branches:
-      - main 
-
+      - main  
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-latest 
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Set up LaTeX
-      run: sudo tlmgr install xelatex texlive-lang-cyrillic
+      run: |
+        sudo tlmgr install xelatex texlive-lang-cyrillic
 
     - name: Identify changed .tex files
       id: changed_files
       run: |
-        echo "::set-output name=files::$(git diff --name-only HEAD^ HEAD | grep '\.tex$')"
+        echo "Changed files:"
+        changed_files=$(git diff --name-only HEAD^ HEAD | grep '\.tex$')
+        echo "$changed_files"
+        echo "::set-output name=files::$changed_files"
 
     - name: Compile PDFs
       run: |
+        IFS=$'\n' # Разделитель строк
         for tex_file in ${{ steps.changed_files.outputs.files }}; do
+          echo "Compiling $tex_file"
           if [[ $tex_file == ProbabilityTheory/* ]]; then
             output_dir='../../output/ProbabilityTheory'
           elif [[ $tex_file == Series/* ]]; then
             output_dir='../../output/Series'
           else
+            echo "Skipping $tex_file: not in ProbabilityTheory or Series"
             continue
           fi
 
+          # Создание выходной директории, если её нет
+          mkdir -p "$output_dir"
+          
+          # Запуск компиляции
           xelatex -interaction=nonstopmode -output-directory="$output_dir" "\input{../../utils/preamble.tex} \input{$tex_file}"
+          if [ $? -ne 0 ]; then
+            echo "Error compiling $tex_file"
+            exit 1  # Завершить работу, если произошла ошибка компиляции
+          fi
         done
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./output 
-        keep_files: true  
+        publish_dir: ./output
+        keep_files: true 
