@@ -35,36 +35,48 @@
     \begin{equation}
         \{f_{n}(x)\}
     \end{equation}
-
-    сходимость функциональной последовательности:
-    \begin{equation}
-        \begin{align*}
-            &\{f_{n}(x)\} \text{ сходится на } X \text{ к } f(x)\\
-            &\lim_{\n\to\infty} f_{n}(x) = f(x)\\
-            &f_{n}(x)\to f(x) \Leftrightarrow \forall x_{0}\in X\\
-            &\lim_{\n\to\infty} f_{n}(x) = f_{x}\\
-            &f(x), f_{n}(x) \text{ опеределены на } X
-        \end{align*}
-    \end{equation}
-    говорят, что функциональный ряд сходится на множестве \(X\), 
-    если \(S_{n}(x)\to S(x)\) на \(X\).
-
-    \begin{equation}
-        \begin{align*}
-            &\text{Если } \sum_{n = 1}^{\infty} U_{n}(x_{0}) \text{ сходится, то } x_{0} \text{ - точка сходимости}\\
-            &\text{Если } \sum_{n = 1}^{\infty} U_{n}(x_{0}) \text{ расходится, то } x_{0} \text{ - точка расходимости}\\
-        \end{align*}
-    \end{equation}
-    при этом \(X\) назыается \textbf{областью сходимости (расходимости)} ряда. 
 \end{opr}
 
+
+
+\section{Сходимость функциональной последовательности}
+
+\begin{opr}
+    сходимость функциональной последовательности:
+    Если \(f(x), f_{n}(x)\) определены на \(X\):
+    \begin{equation}
+        \begin{align*}
+            &\{f_{n}(x)\} \text{ сходится на } X \text{ к } f(x) 
+            \implies\lim_{n\to\infty} f_{n}(x) = f(x).\\
+            &f_{n}(x)\to f(x) \Leftrightarrow \forall x_{0}\in X\\
+            &\lim_{n\to\infty} f_{n}(x) = f_{x}
+        \end{align*}
+    \end{equation}
+\end{opr}
+
+\begin{opr}
+    Если при фиксированном \(x_{0}\) функциональный ряд сходится, тоговорят, что 
+    он сходится в точке \(x = x_{0}\). При этом множество \(X\) всех таких точек 
+    назыается \textbf{областью сходимости} ряда. Аналогично для расходимости. 
+\end{opr}
+
+\begin{thm}
+    \textbf{Остаток сходящегося функционального ряда равен 0}.
+    Если ряд сходится к сумме \(S(x)\) и \(S(x) = S_{n}(x) + r_{n+1}(x)\) 
+    (\(r\) - остаток ряда), то
+    \begin{equation}
+        \lim_{n\to\infty}r_{n+1}(x) 
+        = \lim_{n\to\infty}(S(x) - S_{n}(x)) 
+        = S(x) - \underbrace{\lim_{n\to\infty}S_{n+1}(x)_{= S(x)}} = 0
+    \end{equation}
+\end{thm}
 
 \begin{ex}
     \begin{equation}
         \begin{align*}
             &\sum \frac{n + 1}{x^{3}} \text{  везде расходится:}\\
-            &\lim_{\n\to\infty} U_{n}(x) = \lim_{\n\to\infty} \frac{n+1}{x^{3}} 
-            = \frac{1}{x^{3}}\lim_{\n\to\infty}(n+1) = \infty .
+            &\lim_{n\to\infty} U_{n}(x) = \lim_{n\to\infty} \frac{n+1}{x^{3}} 
+            = \frac{1}{x^{3}}\lim_{n\to\infty}(n+1) = \infty .
         \end{align*}
     \end{equation}
 \end{ex}
@@ -83,8 +95,8 @@
     \begin{equation}
         \begin{align*}
             &\sum x^{n} - \text{  геом. ряд}\\
-            & |x| < 1\implies \text{  сходится}\\
-            & |x| >= 1\implies \text{  расходится}\\
+            & \abs{x} < 1\implies \text{  сходится}\\
+            & \abs{x} >= 1\implies \text{  расходится}\\
             & (-1; 1) \text{  - область сходимости}
         \end{align*}
     \end{equation}
@@ -93,9 +105,14 @@
 
 \section{Нахожедение области абсолютной сходимости}
 \begin{thm}
-    \textbf{признак Д'Аламбера}
+    \textbf{}
     \begin{equation}
-        \lim_{\n\to\infty} |\frac{U_{n+1}(x)}{U_{n}(x)}| < 1 \implies \text{  решаем}
+        \lim_{n\to\infty} \abs{\frac{U_{n+1}(x)}{U_{n}(x)}} = q(x) \hspace{0.5cm}
+        \begin{cases}
+            q(x) = 0 \implies \text{  сходится на \(-\infty; +\infty\)}\\
+            q(x) = \infty \implies \text{  сходится только в \(x=0\)}\\
+            \text{иначе: интервал из н-ва } \abs{q(x)} < 1. \text{ Затем исследуются концы интервала}
+        \end{cases}
     \end{equation}
 \end{thm}
 
@@ -107,17 +124,17 @@
             &\\
             &U_{n+1}(x) = \frac{5\cdot 5^{n}}{(2n+5)(3x - 2)^{2n + 2}}\\
             &\frac{U_{n+1}(x)}{U_{n}(x)} = \dots = \frac{5(2n+3)}{(2n+5)(3x - 2)^{2}}\\
-            &\lim_{\n\to\infty} |\frac{5(2n+3)}{(2n+5)(3x - 2)^{2}}| = \frac{5}{(3x - 2)^{2}} \underbrace{\lim_{\n\to\infty} \frac{2n+3}{2n+5}}_{\text{\(=1\)}} < 1\\
+            &\lim_{n\to\infty} \abs{\frac{5(2n+3)}{(2n+5)(3x - 2)^{2}}} = \frac{5}{(3x - 2)^{2}} \underbrace{\lim_{n\to\infty} \frac{2n+3}{2n+5}}_{\text{\(=1\)}} < 1\\
             &\frac{5}{(3x - 2)^{2}} < 1\\
             &\frac{(3x - 2)^{2}}{5} > 1\\
             &(3x - 2)^{2} > 5\\
-            &|3x - 2| > \sqrt{5}\\
+            &\abs{3x - 2} > \sqrt{5}\\
             & 3x - 2 > \sqrt{5} \implies x > \frac{2 + \sqrt{5}}{3}\\
             & 3x - 2 < - \sqrt{5} \implies x < \frac{2 - \sqrt{5}}{3}\\
             &x\in (-\infty; \frac{2 - \sqrt{5}}{3}) \cup (\frac{2 + \sqrt{5}}{3}; +\infty) \text{  - область абсолютной сходимости ряда}
         \end{align*}
     \end{equation}
-    концы проверяем отдельно:
+    границы проверяем отдельно, исследуем возникающие числовые ряды:
     \begin{proof}
         \color{YellowOrange}\textbf{TODO}
     \end{proof}
@@ -126,7 +143,7 @@
 \begin{thm}
     \textbf{признак Коши}
     \begin{equation}
-        \lim_{\n\to\infty} \abs{\sqrt[n]{U_{n}(x)}} < 1\implies \text{  решаем}
+        \lim_{n\to\infty} \abs{\sqrt[n]{U_{n}(x)}} < 1\implies \text{  решаем}
     \end{equation}
 \end{thm}
 
@@ -139,7 +156,7 @@
     и не зависящее от \(x\):
     \begin{equation}
         \begin{align*}
-            &\forall n > N \implies |S_{n}(x) - S(x)| < \epsilon \Leftrightarrow \abs{R_{n}(x)} < \epsilon\\
+            &\forall n > N \implies \abs{S_{n}(x) - S(x)} < \epsilon \Leftrightarrow \abs{R_{n}(x)} < \epsilon\\
             &\abs{S_{n}(x) - S(x)} = \abs{S(x) - S_{n}(x)} = \abs{R_{n}(x)}
         \end{align*}
     \end{equation}
@@ -182,7 +199,7 @@
                 &\abs{R_{n}(x)} \leq F_{n}(x) \leq P_{n}(x) \forall x\in X
             \end{align*}
         \end{equation}
-        Так как 3 сходится, то \(\lim_{\n\to\infty} P_{n} = 0\) 
+        Так как 3 сходится, то \(\lim_{n\to\infty} P_{n} = 0\) 
         (по св-ву сходящегося числового ряда). Тогда
         \begin{equation}
             \begin{align*}
